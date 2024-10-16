@@ -1,7 +1,8 @@
+
 import java.util.Arrays;
 import java.util.Scanner;
 
-class FirstClass{
+class First{
     public static void main(String args[]){
         
         //with extra line
