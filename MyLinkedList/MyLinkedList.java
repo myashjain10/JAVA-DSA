@@ -1,19 +1,15 @@
 package JavaDSA.MyLinkedList;
 
-import java.util.*;
-
-import javax.swing.tree.TreeNode;
-
 class Node{
     public int data;//
     public Node next = null;//node object that points to null
 
     public Node(int data){//this will require the node to have data when created
         this.data = data;
-
     }
 
 }
+
 public class MyLinkedList {
     private Node head;
     private Node tail;

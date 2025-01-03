@@ -13,6 +13,7 @@ public class Main {
         //overload the toString to output properly
         System.out.println(list);
         list.printRec();
+
         System.out.println();
         list.deleteFromStart();
         list.deleteFromEnd();
