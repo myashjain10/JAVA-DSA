@@ -1,47 +1,39 @@
+
 import java.util.Stack;
+public class MinStack {
 
-public class minStack {
-    Stack<Integer> minEle;
-    Stack<Integer> s;
-    
-    // Constructor    
-    public void minStack()
-	{
-        this.minEle = new Stack<>();
-	    this.s = new Stack<>();
-	}
-	
-    /*returns min element from stack*/
-    int getMin()
-    {
-	// Your code here
-	    if(minEle.isEmpty()) return -1;
-	    
-	    return minEle.peek();
-    }
-    
-    /*returns poped element from stack*/
-    int pop()
-    {
-	// Your code here
-	    if(s.isEmpty()) return -1;
-	    
-	    int num = s.pop();
-	    if(num == minEle.peek()){
-	        minEle.pop();
-	    }
-	    
-	    return num;
+
+    Stack<Integer> stack;
+    Stack<Integer> tempStack;
+    public void MinStack(){
+        this.stack = new Stack();
+        this.tempStack = new Stack();
     }
 
-    /*push element x into the stack*/
-    void push(int value)
-    {
-	// Your code here	
-	    s.push(value);
-	    
-	    if(minEle.isEmpty() || value <= minEle.peek()){
-	        minEle.push(value);
-	    }
+    public void push(int value){
+
+        stack.push(value);
+
+        if(tempStack.isEmpty() || value <= tempStack.peek()){
+            tempStack.push(value);
+        }
+
+    }
+
+    public int pop(){
+        int num = stack.pop();
+        if (num == tempStack.peek()){
+            tempStack.pop();
+        }
+        return num;
+    }
+
+    public int peek(){
+        return stack.peek();
+    }
+
+    public int getMin(){
+
+        return tempStack.peek();
     }
 }
